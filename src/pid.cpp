@@ -21,7 +21,7 @@ T PID<T>::Update(const T curr_err, const T dt) {
   T d_integral = (curr_err + prev_err_) / T(2) * dt;
 
   if (!((output >= output_ub_ && ki_ * d_integral > T(0)) || 
-      output <= output_lb_ && ki_ * d_integral < T(0))) {
+      (output <= output_lb_ && ki_ * d_integral < T(0)))) {
     output += ki_ * d_integral;
     integral_ += d_integral;
   }
@@ -36,6 +36,10 @@ inline void PID<T>::ClearAll() noexcept {
   integral_ = T(0);
   prev_err_ = T(0);
 }
+
+template class PID<double>;
+template class PID<int>;
+template class PID<float>;
 
 
 } // namespace controllers

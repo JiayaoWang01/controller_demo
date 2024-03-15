@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # 设置安装目录和构建类型
-INSTALL_DIR="release"
-# INSTALL_DIR="/usr"
+# INSTALL_DIR="usr"
+INSTALL_DIR="/usr"
 CMAKE_BUILD_TYPE="Release"
 
 # 检查并创建安装目录

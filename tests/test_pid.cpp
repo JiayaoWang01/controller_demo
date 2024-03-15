@@ -9,7 +9,7 @@ TEST(testCase, TestPid) {
   models::SimpleModel<double> plant(a, b);
   plant.Initialize(x0);
 
-  double kp = 1.0, ki = 0.1, kd = 0.0, u_ub = 0.5, u_lb = -0.5;
+  double kp = 5, ki = 2, kd = 0.0, u_ub = 10, u_lb = -10;
   controllers::PID<double> pid_controller(kp, ki, kd, u_ub, u_lb);
 
   std::vector<double> ref_traj(100, 1.0);
@@ -29,7 +29,16 @@ TEST(testCase, TestPid) {
 
   std::cout << "tracking error: ";
   for (double e : err_traj) {
-    std::cout << e << ", " << std::endl;
+    std::cout << e << ", ";
   }
+
+  std::cout << std::endl;
+
+  std::cout << "action traj: ";
+  for (double u : act_traj) {
+    std::cout << u << ", ";
+  }
+
+  std::cout << std::endl;
 
 }
