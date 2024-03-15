@@ -1,0 +1,24 @@
+# vscode ignore
+.vscode/
+
+# clion build
+cmake-build-debug/
+
+*.pyc
+
+# build file
+build/
+release/
+
+# test file
+/demo
+
+# out files
+*.o
+*.out
+
+# git mergetool
+*.orig
+
+# GitEye tool (free):
+.project
