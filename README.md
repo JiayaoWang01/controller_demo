@@ -1,6 +1,8 @@
 # Controller Demo
 
-## Install dependence gtest
+## Install gtest
+
+sudo apt-get install libgtest-dev
 
 ## Run
 
